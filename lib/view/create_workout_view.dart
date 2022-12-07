@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widget/bottom_nav_bar_view.dart';
+import '../widget/bottom_nav_bar.dart';
 import '../model/exercise.dart';
 import '../widget/add_exercise.dart';
 

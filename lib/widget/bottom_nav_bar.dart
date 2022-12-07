@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BottomNavBar extends StatefulWidget {
-  int selectedIndex;
+class BottomNavBar extends StatelessWidget {
+  late int selectedIndex;
 
   BottomNavBar({Key? key, required this.selectedIndex}) : super(key: key);
-
-  @override
-  State<BottomNavBar> createState() => _BottomNavBarState();
-}
-
-class _BottomNavBarState extends State<BottomNavBar> {
-  // TODO: Ask Alex how to use selectedIndex down here when declared higher up. Should BottomNavBar be stateful?
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +18,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
     void bottomNavBarSelect(int index) {
       context.go('/${items[index]}');
-      setState(() {
-        // selectedIndex = index;
-      });
+      selectedIndex = index;
     }
 
     return BottomNavigationBar(
@@ -54,7 +45,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           label: 'Profile',
         ),
       ],
-      // currentIndex: selectedIndex,
+      currentIndex: selectedIndex,
       showUnselectedLabels: true,
       selectedItemColor: Theme.of(context).primaryColor,
       unselectedItemColor: Colors.white,
