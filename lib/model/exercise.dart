@@ -44,7 +44,7 @@ class Workout {
 }
 
 class WorkoutSession {
-  final Workout plan;
+  final Workout? plan;
   final Workout results;
   final int timestamp;
 

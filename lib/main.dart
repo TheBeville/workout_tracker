@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import './view/create_workout_view.dart';
+import './view/create_main_view.dart';
+import './view/home_screen_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,11 +19,15 @@ class _MyAppState extends State<MyApp> {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => const CreateWorkoutView(),
+        builder: (context, state) => const HomeScreen(),
+      ),
+      GoRoute(
+        path: '/home',
+        builder: (context, state) => const HomeScreen(),
       ),
       GoRoute(
         path: '/create',
-        builder: (context, state) => const CreateWorkoutView(),
+        builder: (context, state) => const MainCreateView(),
       )
     ],
   );
