@@ -29,7 +29,7 @@ class _CreateWorkoutViewState extends State<CreateWorkoutView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Create a workout or plan'),
+            const Text('Create a workout'),
             TextButton(
               onPressed: _userSelectExercise,
               child: const Text('Add'),
@@ -37,9 +37,7 @@ class _CreateWorkoutViewState extends State<CreateWorkoutView> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavBar(
-        selectedIndex: 1,
-      ),
+      bottomNavigationBar: const BottomNavBar(selectedIndex: 1),
     );
   }
 }

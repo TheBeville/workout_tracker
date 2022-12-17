@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BottomNavBar extends StatelessWidget {
-  late int selectedIndex;
+  final int selectedIndex;
 
-  BottomNavBar({Key? key, required this.selectedIndex}) : super(key: key);
+  const BottomNavBar({super.key, required this.selectedIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,6 @@ class BottomNavBar extends StatelessWidget {
 
     void bottomNavBarSelect(int index) {
       context.go('/${items[index]}');
-      selectedIndex = index;
     }
 
     return BottomNavigationBar(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:workout_tracker/view/create_workout_view.dart';
 import '../widget/bottom_nav_bar.dart';
 
 class MainCreateView extends StatefulWidget {
@@ -9,6 +11,10 @@ class MainCreateView extends StatefulWidget {
 }
 
 class _MainCreateViewState extends State<MainCreateView> {
+  CreateWorkoutView? createWorkoutView() {
+    context.go('/create/workout');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,12 +55,12 @@ class _MainCreateViewState extends State<MainCreateView> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
+              children: [
                 ElevatedButton(
-                  onPressed: null,
-                  child: Text('Create'),
+                  onPressed: createWorkoutView,
+                  child: const Text('Create'),
                 ),
-                ElevatedButton(
+                const ElevatedButton(
                   onPressed: null,
                   child: Text('Edit'),
                 ),
@@ -63,9 +69,7 @@ class _MainCreateViewState extends State<MainCreateView> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavBar(
-        selectedIndex: 1,
-      ),
+      bottomNavigationBar: const BottomNavBar(selectedIndex: 1),
     );
   }
 }

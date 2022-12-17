@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:workout_tracker/view/create_workout_view.dart';
 import './view/create_main_view.dart';
 import './view/home_screen_view.dart';
 
@@ -28,6 +29,10 @@ class _MyAppState extends State<MyApp> {
       GoRoute(
         path: '/create',
         builder: (context, state) => const MainCreateView(),
+      ),
+      GoRoute(
+        path: '/create/workout',
+        builder: (context, state) => const CreateWorkoutView(),
       )
     ],
   );
@@ -38,7 +43,7 @@ class _MyAppState extends State<MyApp> {
       routerConfig: _router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
     );
   }
